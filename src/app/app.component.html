@@ -1,0 +1,26 @@
+<mat-sidenav-container fullscreen
+                       [ngClass]="themeName">
+  <mat-toolbar color="primary"
+               class="fixed-header"
+               role="toolbar">
+    <button mat-icon-button
+            (click)="sideNav.open()"
+            role="button"
+            aria-label="menu">
+      <mat-icon>view_headline</mat-icon>
+    </button>
+    <h3 [routerLink]="['/movies']">{{ title }}</h3>
+  </mat-toolbar>
+
+  <mat-sidenav #sideNav
+               class="height">
+    <mat-list>
+      <a role="link"
+         mat-list-item
+         [routerLink]="['/movies']"
+         (click)="sideNav.close()">Movies</a>
+    </mat-list>
+  </mat-sidenav>
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
